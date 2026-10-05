@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#070912">
+
+<title>KIGNARYS TECHNOLOGIES</title>
+
+<style>
+
+/* =========================
+   BASE
+========================= */
+
+:root {
+    --bg: #050711;
+    --bg2: #0c1020;
+    --card: rgba(16, 20, 38, 0.75);
+    --text: #f7f9ff;
+    --muted: #a7afc8;
+    --cyan: #58e7ff;
+    --violet: #9b6dff;
+    --line: rgba(255,255,255,0.10);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background:
+        radial-gradient(
+            circle at 15% 10%,
+            rgba(88,231,255,0.12),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 85% 20%,
+            rgba(155,109,255,0.14),
+            transparent 30%
+        ),
+        var(--bg);
+
+    color: var(--text);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(1120px, 92%);
+    margin: auto;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    backdrop-filter: blur(18px);
+
+    background: rgba(5,7,17,0.78);
+
+    border-bottom: 1px solid var(--line);
+}
+
+.nav {
+    min-height: 76px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    font-weight: 800;
+}
+
+.logo {
+    width: 42px;
+    height: 42px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cyan),
+            var(--violet)
+        );
+
+    color: #050711;
+
+    font-size: 21px;
+    font-weight: 900;
+
+    box-shadow:
+        0 0 30px rgba(88,231,255,0.30);
+}
+
+.brand small {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+
+    display: flex;
+
+    gap: 28px;
+
+    font-size: 14px;
+}
+
+nav a {
+    color: #dce2f6;
+
+    transition: 0.2s;
+}
+
+nav a:hover {
+    color: var(--cyan);
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: calc(100vh - 76px);
+
+    display: grid;
+    place-items: center;
+
+    text-align: center;
+}
+
+.hero-inner {
+    padding: 90px 0;
+}
+
+.eyebrow {
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 8px 15px;
+
+    border: 1px solid var(--line);
+
+    border-radius: 999px;
+
+    background: rgba(255,255,255,0.03);
+
+    color: #dfe6ff;
+
+    font-size: 12px;
+
+    margin-bottom: 25px;
+}
+
+.dot {
+    width: 7px;
+    height: 7px;
+
+    border-radius: 50%;
+
+    background: var(--cyan);
+
+    box-shadow:
+        0 0 15px var(--cyan);
+}
+
+h1 {
+    max-width: 900px;
+
+    margin: auto;
+
+    font-size: clamp(44px, 8vw, 86px);
+
+    line-height: 0.98;
+
+    letter-spacing: -3px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #ffffff 20%,
+            var(--cyan) 55%,
+            #b998ff 85%
+        );
+
+    -webkit-background-clip: text;
+
+    background-clip: text;
+
+    color: transparent;
+}
+
+.hero p {
+    max-width: 680px;
+
+    margin: 28px auto 35px;
+
+    color: var(--muted);
+
+    font-size: 18px;
+}
+
+.buttons {
+    display: flex;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 14px;
+}
+
+.btn {
+    min-height: 48px;
+
+    padding: 0 21px;
+
+    border-radius: 14px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: 700;
+
+    border: 1px solid var(--line);
+
+    transition: 0.2s;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+    color: #050711;
+
+    border: none;
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--cyan),
+            var(--violet)
+        );
+}
+
+.btn-secondary {
+    background: rgba(255,255,255,0.04);
+}
+
+
+/* =========================
+   SECTIONS
+========================= */
+
+section {
+    padding: 90px 0;
+}
+
+.section-head {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: end;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+}
+
+.label {
+    color: var(--cyan);
+
+    font-size: 12px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.section-head h2 {
+    font-size: clamp(32px, 5vw, 50px);
+
+    line-height: 1.05;
+
+    letter-spacing: -1.5px;
+}
+
+.section-head p {
+    max-width: 500px;
+
+    color: var(--muted);
+}
+
+
+/* =========================
+   SERVICES
+========================= */
+
+.services {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+    gap: 16px;
+}
+
+.card {
+    padding: 25px;
+
+    border: 1px solid var(--line);
+
+    border-radius: 24px;
+
+    background: var(--card);
+
+    box-shadow:
+        0 20px 60px rgba(0,0,0,0.25);
+
+    transition: 0.25s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(88,231,255,0.25);
+}
+
+.card-icon {
+    font-size: 30px;
+
+    margin-bottom: 18px;
+}
+
+.card h3 {
+    margin-bottom: 8px;
+}
+
+.card p {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   CRYSTAL AI
+========================= */
+
+.crystal-box {
+    position: relative;
+
+    overflow: hidden;
+
+    border-radius: 32px;
+
+    padding: 45px;
+
+    border:
+        1px solid rgba(88,231,255,0.18);
+
+    background:
+        radial-gradient(
+            circle at 75% 35%,
+            rgba(155,109,255,0.25),
+            transparent 25%
+        ),
+        radial-gradient(
+            circle at 30% 70%,
+            rgba(88,231,255,0.16),
+            transparent 25%
+        ),
+        rgba(13,16,32,0.88);
+}
+
+.crystal-content {
+    display: grid;
+
+    grid-template-columns:
+        1.2fr 0.8fr;
+
+    align-items: center;
+
+    gap: 40px;
+}
+
+.crystal-content h2 {
+    font-size:
+        clamp(45px, 6vw, 70px);
+
+    line-height: 1;
+
+    margin-bottom: 18px;
+}
+
+.crystal-content p {
+    color: var(--muted);
+
+    max-width: 620px;
+}
+
+.coming {
+    display: inline-block;
+
+    margin-top: 25px;
+
+    padding: 10px 16px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(155,109,255,0.13);
+
+    border:
+        1px solid rgba(155,109,255,0.35);
+
+    color: #d8c7ff;
+
+    font-size: 12px;
+
+    font-weight: 900;
+
+    letter-spacing: 2px;
+}
+
+
+/* =========================
+   DIAMANT CRYSTAL AI
+========================= */
+
+.crystal-art {
+    min-height: 320px;
+
+    display: grid;
+
+    place-items: center;
+}
+
+.diamond {
+    width: 175px;
+    height: 175px;
+
+    position: relative;
+
+    transform:
+        rotate(45deg);
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #ffffff 0%,
+            #b9f9ff 18%,
+            #58e7ff 42%,
+            #8260ff 72%,
+            #d9caff 100%
+        );
+
+    box-shadow:
+        0 0 25px
+        rgba(88,231,255,0.65),
+
+        0 0 70px
+        rgba(155,109,255,0.45),
+
+        inset
+        -15px -15px 30px
+        rgba(70,50,180,0.35);
+
+    animation:
+        diamondFloat 4s
+        ease-in-out
+        infinite;
+}
+
+/* Facettes du diamant */
+
+.diamond::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 13px;
+
+    border-radius: 13px;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.85),
+            rgba(88,231,255,0.18),
+            rgba(155,109,255,0.75)
+        );
+
+    box-shadow:
+        inset
+        5px 5px 15px
+        rgba(255,255,255,0.5);
+}
+
+/* Étoile au centre */
+
+.diamond::after {
+    content: "✦";
+
+    position: absolute;
+
+    inset: 0;
+
+    display: grid;
+
+    place-items: center;
+
+    color: white;
+
+    font-size: 65px;
+
+    transform:
+        rotate(-45deg);
+
+    text-shadow:
+        0 0 10px white,
+        0 0 30px var(--cyan),
+        0 0 50px var(--violet);
+}
+
+@keyframes diamondFloat {
+
+    0%,
+    100% {
+        transform:
+            translateY(0)
+            rotate(45deg);
+    }
+
+    50% {
+        transform:
+            translateY(-15px)
+            rotate(50deg);
+    }
+}
+
+
+/* =========================
+   ENTREPRISE
+========================= */
+
+.about {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 18px;
+}
+
+.about .card {
+    min-height: 190px;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    border-top:
+        1px solid var(--line);
+
+    padding:
+        30px 0 50px;
+
+    color: var(--muted);
+
+    font-size: 13px;
+}
+
+.footer-line {
+    display: flex;
+
+    justify-content:
+        space-between;
+
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+.signature {
+    color: #e8ebfa;
+}
+
+.signature span {
+    color: var(--cyan);
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .services {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+    .crystal-content,
+    .about {
+        grid-template-columns: 1fr;
+    }
+
+    .crystal-art {
+        min-height: 250px;
+    }
+
+    .section-head {
+        flex-direction: column;
+
+        align-items: flex-start;
+    }
+}
+
+
+@media (max-width: 600px) {
+
+    nav {
+        display: none;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 70px 0;
+    }
+
+    .services {
+        grid-template-columns: 1fr;
+    }
+
+    .crystal-box {
+        padding: 28px;
+    }
+
+    .diamond {
+        width: 125px;
+        height: 125px;
+    }
+
+    .diamond::after {
+        font-size: 45px;
+    }
+
+    h1 {
+        letter-spacing: -2px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     HEADER
+========================= -->
+
+<header>
+
+    <div class="container nav">
+
+        <a href="#accueil" class="brand">
+
+            <div class="logo">
+                K
+            </div>
+
+            <div>
+                KIGNARYS TECHNOLOGIES
+
+                <small>
+                    BUILD THE NEXT.
+                </small>
+            </div>
+
+        </a>
+
+
+        <nav>
+
+            <ul>
+
+                <li>
+                    <a href="#accueil">
+                        Accueil
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#services">
+                        Services
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#projet">
+                        Projet
+                    </a>
+                </li>
+
+                <li>
+                    <a href="#entreprise">
+                        Entreprise
+                    </a>
+                </li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- =========================
+     MAIN
+========================= -->
+
+<main>
+
+
+<!-- HERO -->
+
+<section
+    class="hero"
+    id="accueil"
+>
+
+    <div class="container hero-inner">
+
+        <div class="eyebrow">
+
+            <span class="dot"></span>
+
+            KIGNARYS TECHNOLOGIES
+
+        </div>
+
+
+        <h1>
+            Nous créons les
+            technologies de demain.
+        </h1>
+
+
+        <p>
+            Une technologie pensée pour être ambitieuse,
+            moderne et accessible.
+            KIGNARYS TECHNOLOGIES développe des projets
+            numériques conçus pour avancer avec leur époque.
+        </p>
+
+
+        <div class="buttons">
+
+            <a
+                href="#projet"
+                class="btn btn-primary"
+            >
+                Découvrir notre projet
+            </a>
+
+
+            <a
+                href="#services"
+                class="btn btn-secondary"
+            >
+                Nos services
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- SERVICES -->
+
+<section id="services">
+
+    <div class="container">
+
+
+        <div class="section-head">
+
+            <div>
+
+                <div class="label">
+                    NOS DOMAINES
+                </div>
+
+                <h2>
+                    Des idées.
+                    Des technologies.
+                    Des projets.
+                </h2>
+
+            </div>
+
+
+            <p>
+                Nous imaginons et construisons des solutions
+                numériques dans plusieurs domaines, avec une
+                priorité : créer des expériences utiles et modernes.
+            </p>
+
+        </div>
+
+
+
+        <div class="services">
+
+
+            <article class="card">
+
+                <div class="card-icon">
+                    🤖
+                </div>
+
+                <h3>
+                    Intelligence artificielle
+                </h3>
+
+                <p>
+                    Des expériences intelligentes pensées
+                    pour assister, apprendre et créer.
+                </p>
+
+            </article>
+
+
+
+            <article class="card">
+
+                <div class="card-icon">
+                    📱
+                </div>
+
+                <h3>
+                    Applications
+                </h3>
+
+                <p>
+                    Des applications modernes conçues
+                    pour le quotidien et les nouveaux usages.
+                </p>
+
+            </article>
+
+
+
+            <article class="card">
+
+                <div class="card-icon">
+                    🌐
+                </div>
+
+                <h3>
+                    Sites web
+                </h3>
+
+                <p>
+                    Des interfaces rapides, élégantes
+                    et adaptées aux mobiles et ordinateurs.
+                </p>
+
+            </article>
+
+
+
+            <article class="card">
+
+                <div class="card-icon">
+                    🛡️
+                </div>
+
+                <h3>
+                    Solutions numériques
+                </h3>
+
+                <p>
+                    Des outils numériques construits avec
+                    la sécurité et la fiabilité en tête.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- CRYSTAL AI -->
+
+<section id="projet">
+
+    <div class="container">
+
+        <div class="crystal-box">
+
+            <div class="crystal-content">
+
+
+                <div>
+
+                    <div class="label">
+                        PREMIER PROJET
+                    </div>
+
+
+                    <h2>
+                        Crystal AI
+                    </h2>
+
+
+                    <p>
+                        Ton univers.
+                        Ton intelligence.
+                        Ton futur.
+
+                        Crystal AI est notre première grande
+                        plateforme d'intelligence artificielle,
+                        pensée comme un véritable univers numérique.
+                    </p>
+
+
+                    <div class="coming">
+                        COMING SOON
+                    </div>
+
+                </div>
+
+
+
+                <!-- DIAMANT -->
+
+                <div class="crystal-art">
+
+                    <div class="diamond"></div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ENTREPRISE -->
+
+<section id="entreprise">
+
+    <div class="container">
+
+
+        <div class="section-head">
+
+            <div>
+
+                <div class="label">
+                    KIGNARYS TECHNOLOGIES
+                </div>
+
+                <h2>
+                    Le début d'un univers.
+                </h2>
+
+            </div>
+
+
+            <p>
+                KIGNARYS TECHNOLOGIES est pensé comme un groupe
+                capable de faire naître plusieurs projets :
+                IA, applications, sécurité, recherche, jeux
+                et bien plus encore.
+            </p>
+
+        </div>
+
+
+
+        <div class="about">
+
+
+            <article class="card">
+
+                <div class="card-icon">
+                    💡
+                </div>
+
+                <h3>
+                    Innovation
+                </h3>
+
+                <p>
+                    Transformer des idées ambitieuses
+                    en produits numériques concrets.
+                </p>
+
+            </article>
+
+
+
+            <article class="card">
+
+                <div class="card-icon">
+                    🚀
+                </div>
+
+                <h3>
+                    Vision
+                </h3>
+
+                <p>
+                    Construire progressivement un véritable
+                    écosystème technologique.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <div class="container footer-line">
+
+        <div>
+            © 2026 KIGNARYS TECHNOLOGIES.
+            Tous droits réservés.
+        </div>
+
+
+        <div class="signature">
+
+            BUILD THE
+            <span>
+                NEXT.
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
